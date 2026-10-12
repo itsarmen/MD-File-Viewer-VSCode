@@ -83,6 +83,10 @@ npm run vsix      # produces md-file-viewer-1.0.0.vsix
 Install it with **Extensions: Install from VSIX…** or
 `code --install-extension md-file-viewer-1.0.0.vsix`.
 
+
+<img width="1560" height="756" alt="image" src="https://github.com/user-attachments/assets/6afcd031-b743-463c-8d8f-da897fcfbdc1" />
+
+
 ## Author
 
 **Amiran Kimadze** (*itsarmen*)
