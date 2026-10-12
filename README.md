@@ -6,7 +6,25 @@
   Web:        https://xrow.asia
 -->
 
+<p align="center">
+  <img src="media/icon.png" alt="MD File Viewer icon" width="128" height="128">
+</p>
+
+<p align="center">
+  <a href="https://marketplace.visualstudio.com/items?itemName=ITSARMEN.md-file-viewer">
+    <img src="https://vsmarketplacebadges.dev/version-short/ITSARMEN.md-file-viewer.svg" alt="Marketplace version">
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=ITSARMEN.md-file-viewer">
+    <img src="https://vsmarketplacebadges.dev/installs-short/ITSARMEN.md-file-viewer.svg" alt="Marketplace installs">
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=ITSARMEN.md-file-viewer">
+    <img src="https://vsmarketplacebadges.dev/rating-short/ITSARMEN.md-file-viewer.svg" alt="Marketplace rating">
+  </a>
+</p>
+
 # MD File Viewer for VS Code
+
+[**Install from the VS Code Marketplace →**](https://marketplace.visualstudio.com/items?itemName=ITSARMEN.md-file-viewer)
 
 A **full custom editor** for Markdown — the VS Code edition of the
 [MD File Viewer](https://github.com/itsarmen/MD-File-Viewer-Software) desktop app.
