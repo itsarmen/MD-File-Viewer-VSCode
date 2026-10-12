@@ -1,0 +1,240 @@
+{
+  "name": "md-file-viewer",
+  "displayName": "MD File Viewer",
+  "description": "View and edit Markdown in a full custom editor with a WYSIWYG surface, GitHub-style (GFM) preview, view/edit switcher and live status bar.",
+  "version": "1.0.0",
+  "publisher": "itsarmen",
+  "license": "MIT",
+  "author": {
+    "name": "Amiran Kimadze (itsarmen)",
+    "email": "amoswaper@gmail.com",
+    "url": "https://xrow.asia"
+  },
+  "homepage": "https://github.com/itsarmen/MD-File-Viewer-Software",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itsarmen/MD-File-Viewer-Software.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itsarmen/MD-File-Viewer-Software/issues"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Formatters",
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "markdown",
+    "md",
+    "gfm",
+    "github",
+    "preview",
+    "viewer",
+    "editor",
+    "wysiwyg"
+  ],
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#0d1117",
+    "theme": "dark"
+  },
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:markdown",
+    "onLanguage:mdx"
+  ],
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "mdFileViewer.editor",
+        "displayName": "MD File Viewer",
+        "selector": [
+          { "filenamePattern": "*.md" },
+          { "filenamePattern": "*.markdown" },
+          { "filenamePattern": "*.mdx" },
+          { "filenamePattern": "*.mdown" },
+          { "filenamePattern": "*.mkd" }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "mdFileViewer.openEditor",
+        "title": "MD File Viewer: Open with MD File Viewer",
+        "category": "MD File Viewer",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "mdFileViewer.openPreviewToSide",
+        "title": "MD File Viewer: Open Preview to the Side",
+        "category": "MD File Viewer",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "mdFileViewer.bold",
+        "title": "Bold",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.italic",
+        "title": "Italic",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.strikethrough",
+        "title": "Strikethrough",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.inlineCode",
+        "title": "Inline Code",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.codeBlock",
+        "title": "Code Block",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.heading1",
+        "title": "Heading 1",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.heading2",
+        "title": "Heading 2",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.heading3",
+        "title": "Heading 3",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.normalText",
+        "title": "Normal Text",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.quote",
+        "title": "Quote",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.bulletedList",
+        "title": "Bulleted List",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.numberedList",
+        "title": "Numbered List",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.taskList",
+        "title": "Task List",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.link",
+        "title": "Link",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.image",
+        "title": "Image",
+        "category": "MD File Viewer"
+      },
+      {
+        "command": "mdFileViewer.horizontalRule",
+        "title": "Horizontal Rule",
+        "category": "MD File Viewer"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "mdFileViewer.bold",
+        "key": "ctrl+b",
+        "when": "editorTextFocus && editorLangId == markdown && !activeCustomEditorId"
+      },
+      {
+        "command": "mdFileViewer.italic",
+        "key": "ctrl+i",
+        "when": "editorTextFocus && editorLangId == markdown && !activeCustomEditorId"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "mdFileViewer.openEditor",
+          "when": "resourceLangId == markdown",
+          "group": "navigation@30"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "mdFileViewer.openPreviewToSide",
+          "when": "editorLangId == markdown && !activeCustomEditorId",
+          "group": "navigation@1"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "MD File Viewer",
+      "properties": {
+        "mdFileViewer.preview.lineBreaks": {
+          "type": "boolean",
+          "default": false,
+          "description": "Render single line breaks inside a paragraph as <br> (like GitHub comments)."
+        },
+        "mdFileViewer.preview.githubStyle": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use GitHub's Primer light/dark palette for the preview."
+        },
+        "mdFileViewer.preview.contentWidth": {
+          "type": "number",
+          "default": 980,
+          "description": "Maximum width (in pixels) of the rendered Markdown content."
+        },
+        "mdFileViewer.statusBar.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the MD File Viewer word/line counter in the VS Code status bar."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "check-types": "tsc --noEmit",
+    "package": "node esbuild.js --production",
+    "vsix": "vsce package",
+    "pretest": "npm run compile && tsc -p tsconfig.test.json",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-electron": "^2.4.1",
+    "@vscode/vsce": "^3.2.1",
+    "esbuild": "^0.24.0",
+    "glob": "^11.0.0",
+    "mocha": "^10.7.3",
+    "typescript": "^5.6.0"
+  },
+  "dependencies": {
+    "@toast-ui/editor": "^3.2.2",
+    "highlight.js": "^11.10.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-task-lists": "^2.1.1"
+  }
+}
