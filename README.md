@@ -7,7 +7,7 @@
 -->
 
 <p align="center">
-  <img src="media/icon.png" alt="MD File Viewer icon" width="128" height="128">
+  <img src="media/banner.png" alt="MD File Viewer" width="1280">
 </p>
 
 <p align="center">
